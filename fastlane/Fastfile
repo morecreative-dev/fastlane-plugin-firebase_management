@@ -6,6 +6,10 @@ lane :test_add_app do
   firebase_management_add_app
 end
 
+lane :test_add_sha do
+  firebase_management_upload_sha
+end
+
 lane :test_download_config do
   firebase_management_download_config
 end

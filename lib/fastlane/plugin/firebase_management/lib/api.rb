@@ -103,6 +103,18 @@ module Fastlane
 				request_json("v1beta1/projects/#{project_id}/androidApps", :post, parameters)
 			end
 
+			def upload_sha(project_id, app_id, sha_hash, cert_type)
+				UI.verbose "Uploading sha"
+				parameters = {
+					"shaHash" => sha_hash,
+					"certType" => cert_type,
+				}
+
+				json = request_json("v1beta1/projects/#{project_id}/androidApps/#{app_id}/sha", :post, parameters)
+				UI.verbose "Successfuly uploaded sha"
+				json
+			end
+
 			def upload_certificate(project_number, client_id, type, certificate_value, certificate_password)
 				
 				prefix = type == :development ? "debug" : "prod"
