@@ -28,11 +28,16 @@ List all projects and apps
 firebase_management_list
 ```
 
-
 Add app to a project and download config file
 
 ```
 firebase_management_add_app
+```
+
+Add sha to an android app and download config file
+
+```
+firebase_management_upload_sha
 ```
 
 Download config file for a client
@@ -46,9 +51,11 @@ firebase_management_download_config
 ~~Plugin works only with service accounts.~~
 
 #### User login
+
 You can use your ordinary account in combination with client secret json file created in GCP console.
 
 #### Service accounts
+
 A service account is a special Google account that belongs to your application or a virtual machine, instead of to an individual end user. Read more [here](https://cloud.google.com/iam/docs/service-accounts).
 
 All you need for the plugin to work is a json file with service account private key information. The easiest way to get it is...
@@ -59,7 +66,6 @@ Go to Firebase Console -> Your project -> Project settings -> Service accounts a
 
 Check out the [example `Fastfile`](fastlane/Fastfile) to see how to use this plugin. Try it by cloning the repo, running `fastlane install_plugins` and `bundle exec fastlane test`.
 
-
 ## Run tests for this plugin
 
 To run both the tests, and code style validation, run
@@ -69,6 +75,7 @@ rake
 ```
 
 To automatically fix many of the styling issues, use
+
 ```
 rubocop -a
 ```
