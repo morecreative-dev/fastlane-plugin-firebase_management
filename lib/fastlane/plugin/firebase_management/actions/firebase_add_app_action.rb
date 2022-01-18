@@ -34,10 +34,13 @@ module Fastlane
 					# search for newly created app
 					app = apps.detect {|app| app["bundleId"] == bundle_id }
 					
+					UI.success "Start detect app "
+
 					if app != nil then
 						UI.success "You already have app with id: #{app["appId"]}"
 					else
-						
+						UI.success "Start create new app "
+
 						# create new ios app on Firebase
 						api.add_ios_app(project_id, bundle_id, display_name)
 
