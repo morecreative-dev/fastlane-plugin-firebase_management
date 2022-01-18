@@ -28,41 +28,72 @@ module Fastlane
 
 				case type
 				when :ios
-					# create new ios app on Firebase
-					api.add_ios_app(project_id, bundle_id, display_name)
-
-					# App creation is a long-running operation.
-					# Creation endpoint returns operation ID which should be used to check
-					# the result of the operation. This requires another Google API to be
-					# enabled and other stuff to do so just wait for 3 seconds here, fetch
-					# apps from Firebase and check whether the new app is there.
-					sleep 3
-
 					# download apps for project
 					apps = api.ios_app_list(project_id)
 
 					# search for newly created app
 					app = apps.detect {|app| app["bundleId"] == bundle_id }
+					
+					if app != nil then
+						UI.success "You already have app with id: #{app["appId"]}"
+					else
+						
+						# create new ios app on Firebase
+						api.add_ios_app(project_id, bundle_id, display_name)
+
+						# App creation is a long-running operation.
+						# Creation endpoint returns operation ID which should be used to check
+						# the result of the operation. This requires another Google API to be
+						# enabled and other stuff to do so just wait for 3 seconds here, fetch
+						# apps from Firebase and check whether the new app is there.
+						sleep 3
+
+						# download apps for project
+						apps = api.ios_app_list(project_id)
+
+						# search for newly created app
+						app = apps.detect {|app| app["bundleId"] == bundle_id }
+						# present result to user
+						if app != nil then
+							UI.success "New app with id: #{app["appId"]} successfully created"
+						else
+							UI.crash! "Unable to create new app"
+						end
+					end
+						
 
 				when :android
-					# create new android app on Firebase
-					api.add_android_app(project_id, bundle_id, display_name)
-
-					# see reason described above
-					sleep 3
-
+						
 					# download apps for project
 					apps = api.android_app_list(project_id)
 
 					# search for newly created app
 					app = apps.detect {|app| app["packageName"] == bundle_id }
-				end
+							
+					if app != nil then
+						UI.success "You already have app with id: #{app["appId"]}"
+					else
+						
+						# create new android app on Firebase
+						api.add_android_app(project_id, bundle_id, display_name)
 
-				# present result to user
-				if app != nil then
-					UI.success "New app with id: #{app["appId"]} successfully created"
-				else
-					UI.crash! "Unable to create new app"
+						# see reason described above
+						sleep 3	
+						
+						# download apps for project
+						apps = api.android_app_list(project_id)
+
+						# search for newly created app
+						app = apps.detect {|app| app["packageName"] == bundle_id }
+
+						# present result to user
+						if app != nil then
+							UI.success "New app with id: #{app["appId"]} successfully created"
+						else
+							UI.crash! "Unable to create new app"
+						end
+					end
+
 				end
 
 				if params[:download_config] then
