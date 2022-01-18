@@ -7,11 +7,11 @@ require 'fastlane/plugin/firebase_management/version'
 Gem::Specification.new do |spec|
   spec.name          = 'fastlane-plugin-firebase_management'
   spec.version       = Fastlane::FirebaseManagement::VERSION
-  spec.author        = 'Ackee'
-  spec.email         = 'jan.misar@ackee.cz'
+  spec.author        = 'Abdelrahman Eldesoky'
+  spec.email         = 'abdelrhman.m.eldesoky@gmail.com'
 
   spec.summary       = 'Unofficial tool to access Firebase project settings'
-  spec.homepage      = "https://github.com/AckeeCZ/fastlane-plugin-firebase_management"
+  spec.homepage      = "https://github.com/morecreative-dev/fastlane-plugin-firebase_management"
   spec.license       = "MIT"
 
   spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)
