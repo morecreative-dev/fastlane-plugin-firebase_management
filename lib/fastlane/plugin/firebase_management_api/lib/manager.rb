@@ -1,5 +1,5 @@
 module Fastlane
-	module FirebaseManagement
+	module FirebaseManagementApi
 		class Manager
 
 			require 'googleauth'
@@ -30,7 +30,7 @@ module Fastlane
 				end
 				
 				token = credentials.fetch_access_token!["access_token"]
-				@api = FirebaseManagement::Api.new(token)
+				@api = FirebaseManagementApi::Api.new(token)
 				@api
 			end
 
@@ -43,7 +43,7 @@ module Fastlane
 				)
 
 				token = authorizer.fetch_access_token!["access_token"]
-				@api = FirebaseManagement::Api.new(token)
+				@api = FirebaseManagementApi::Api.new(token)
 				@api
 			end
 

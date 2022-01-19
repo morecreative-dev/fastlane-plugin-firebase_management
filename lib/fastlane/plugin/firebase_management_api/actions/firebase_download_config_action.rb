@@ -1,9 +1,9 @@
 module Fastlane
 	module Actions
-		class FirebaseManagementDownloadConfigAction < Action
+		class FirebaseManagementApiDownloadConfigAction < Action
 
 			def self.run(params)
-				manager = FirebaseManagement::Manager.new
+				manager = FirebaseManagementApi::Manager.new
 
 				# login
 				api = nil

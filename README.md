@@ -1,16 +1,16 @@
-# firebase_management `fastlane` Plugin
+# firebase_management_api `fastlane` Plugin
 
-[![fastlane Plugin Badge](https://rawcdn.githack.com/fastlane/fastlane/master/fastlane/assets/plugin-badge.svg)](https://rubygems.org/gems/fastlane-plugin-firebase_management)
+[![fastlane Plugin Badge](https://rawcdn.githack.com/fastlane/fastlane/master/fastlane/assets/plugin-badge.svg)](https://rubygems.org/gems/fastlane-plugin-firebase_management_api)
 
 ## Getting Started
 
-This project is a [_fastlane_](https://github.com/fastlane/fastlane) plugin. To get started with `fastlane-plugin-firebase_management`, add it to your project by running:
+This project is a [_fastlane_](https://github.com/fastlane/fastlane) plugin. To get started with `fastlane-plugin-firebase_management_api`, add it to your project by running:
 
 ```bash
-fastlane add_plugin firebase_management
+fastlane add_plugin firebase_management_api
 ```
 
-## About firebase_management
+## About firebase_management_api
 
 An unofficial tool to access Firebase project settings. It allows you to create new apps and download config files (GoogleInfo.plist for ios and google-services.json for android).
 
@@ -25,25 +25,25 @@ New features like deleting apps or APNs keys/certificates management are promise
 List all projects and apps
 
 ```
-firebase_management_list
+firebase_management_api_list
 ```
 
 Add app to a project and download config file
 
 ```
-firebase_management_add_app
+firebase_management_api_add_app
 ```
 
 Add sha to an android app and download config file
 
 ```
-firebase_management_upload_sha
+firebase_management_api_upload_sha
 ```
 
 Download config file for a client
 
 ```
-firebase_management_download_config
+firebase_management_api_download_config
 ```
 
 ### Authentication

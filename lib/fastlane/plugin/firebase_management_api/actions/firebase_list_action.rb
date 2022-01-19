@@ -1,9 +1,9 @@
 module Fastlane
 	module Actions
-		class FirebaseManagementListAction < Action
+		class FirebaseManagementApiListAction < Action
 
 			def self.run(params)
-				manager = FirebaseManagement::Manager.new
+				manager = FirebaseManagementApi::Manager.new
 
 				# login
 				api = nil

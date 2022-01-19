@@ -6,7 +6,7 @@ require 'fastlane/plugin/firebase_management_api/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'fastlane-plugin-firebase_management_api'
-  spec.version       = Fastlane::FirebaseManagement::VERSION
+  spec.version       = Fastlane::FirebaseManagementApi::VERSION
   spec.author        = 'Abdelrahman Eldesoky'
   spec.email         = 'abdelrhman.m.eldesoky@gmail.com'
 

@@ -1,7 +1,7 @@
 require 'fastlane_core'
 require 'credentials_manager'
 
-module FirebaseManagement
+module FirebaseManagementApi
 	class Options
 		def self.available_options
 			[
