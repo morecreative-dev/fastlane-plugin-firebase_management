@@ -2,16 +2,16 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'fastlane/plugin/firebase_management/version'
+require 'fastlane/plugin/firebase_management_api/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'fastlane-plugin-firebase_management'
+  spec.name          = 'fastlane-plugin-firebase_management_api'
   spec.version       = Fastlane::FirebaseManagement::VERSION
   spec.author        = 'Abdelrahman Eldesoky'
   spec.email         = 'abdelrhman.m.eldesoky@gmail.com'
 
   spec.summary       = 'Unofficial tool to access Firebase project settings'
-  spec.homepage      = "https://github.com/morecreative-dev/fastlane-plugin-firebase_management"
+  spec.homepage      = "https://github.com/morecreative-dev/fastlane-plugin-firebase_management_api"
   spec.license       = "MIT"
 
   spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)
