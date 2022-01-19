@@ -1,4 +1,4 @@
-require 'fastlane/plugin/firebase_management/version'
+require 'fastlane/plugin/firebase_management_api/version'
 
 module Fastlane
   module FirebaseManagement
